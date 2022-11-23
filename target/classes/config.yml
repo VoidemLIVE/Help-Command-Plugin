@@ -1,0 +1,36 @@
+# Welcome to the HelpCommand config.yml
+# You can edit values here for the plugin
+
+######################################
+# Plugin config
+######################################
+
+######################################
+# Main Help Command
+######################################
+
+help:
+  - "&5----------"
+  - "&b&lServer&d&lName"
+  - "&5----------"
+  - "&b/spawn &7&l- &r&dTakes you to spawn"
+  - "&b/kill &7&l- &r&dKills a player"
+  - "&b/gms &7&l- &r&dEnters survival mode"
+  - "&b/gmc &7&l- &r&dEnters creative mode"
+  - "&5----------"
+
+######################################
+# Enabled Commands
+######################################
+
+# Please make sure that this value below is either true or false
+helpcmd: true
+######################################
+# Language
+######################################
+reload: '&aHelpCommand reloading' # sets message for /hc reload
+disabled: '&cThis command is disabled' # sets message for if a command is disabled
+noargument: '&cPlease use an argument' # sets message for /hc if no arguments are provided
+######################################
+
+# Voidem#2269 On Discord

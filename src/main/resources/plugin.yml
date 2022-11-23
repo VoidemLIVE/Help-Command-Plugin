@@ -1,0 +1,16 @@
+name: HelpCommand
+version: '2.0-PublicRelease'
+main: net.greenwoodmc.helpcommand.HelpCommand
+api-version: 1.18
+authors: [ VoidemLIVE ]
+description: Simple custom help command
+website: dev.voidemnet.com
+
+
+commands:
+  help:
+    description: Help command
+  hc:
+    description: Help Command plugin options
+    permission: hc.admin
+    permission-message: No permission
