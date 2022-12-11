@@ -6,3 +6,5 @@ This plugin allows you to create a simple help message in chat for players to se
 
 Check our the spigotmc page for more info:
 https://www.spigotmc.org/resources/help-command.102926/
+
+![Bstats](https://bstats.org/signatures/bukkit/Help%20Plugin.svg)
