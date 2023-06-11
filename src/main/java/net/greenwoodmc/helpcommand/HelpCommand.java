@@ -12,14 +12,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class HelpCommand extends JavaPlugin {
 
     public void onEnable() {
-        this.getLogger().info("Help Command Enabled");
+        getLogger().info("Help Command Enabled");
         //int pluginId = ;
         //new Metrics(this, pluginId);
-        this.getConfig().options().copyDefaults();
-        this.saveDefaultConfig();
-        this.getCommand("help").setExecutor(this);
-        this.getCommand("hc").setExecutor(this);
-        this.getCommand("hc").setTabCompleter(new hc());
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
+        getCommand("help").setExecutor(this);
+        getCommand("hc").setExecutor(this);
+        getCommand("hc").setTabCompleter(new hc());
     }
 
     public void onDisable() {
@@ -61,6 +61,11 @@ public class HelpCommand extends JavaPlugin {
                     if (arg1.equalsIgnoreCase("version")) {
                         ver = this.getDescription().getVersion();
                         player.sendMessage("HelpCommand Version: " + ver);
+                    }
+
+                    if (arg1.equalsIgnoreCase("help")) {
+                        player.sendMessage(TextUtil.color("&6HelpCommand wiki: &ehttps://voidemtwitch.gitbook.io/help-command/"));
+                        player.sendMessage(TextUtil.color("&6Support Discord: &ehttps://discord.com/invite/vbcqu6rts8"));
                     }
                 } else {
                     arg1 = this.getConfig().getString("noargument");
