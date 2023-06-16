@@ -41,7 +41,7 @@ public class HelpCommand extends JavaPlugin {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Only players can use this command");
+            sender.sendMessage(getConfig().getString("playersOnly"));
             return true;
         } else {
             Player player = (Player)sender;

@@ -31,6 +31,7 @@ helpcmd: true
 reload: '&aHelpCommand reloading' # sets message for /hc reload
 disabled: '&cThis command is disabled' # sets message for if a command is disabled
 noargument: '&cPlease use an argument' # sets message for /hc if no arguments are provided
+playersOnly: 'Only players can use this command' # sets message for when a command is run from the console
 ######################################
 
 # Voidem#2269 On Discord
