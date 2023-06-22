@@ -12,4 +12,7 @@ Download pages:
 + [BuiltByBit](https://builtbybit.com/resources/help-command.28957/)
 + [Github Releases](https://github.com/VoidemLIVE/Help-Command-Plugin/releases)
 
+Documentation:
+https://hcdocs.voidem.com/
+
 ![Bstats](https://bstats.org/signatures/bukkit/Help%20Plugin.svg)
