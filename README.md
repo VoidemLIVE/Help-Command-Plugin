@@ -1,7 +1,7 @@
 # Help-Command-Plugin
 
 
-## THIS PLUGIN SUPPORTS 1.20
+## THIS PLUGIN SUPPORTS 1.20.1
 
 This plugin allows you to create a simple help message in chat for players to see when they run the /help command.
 
