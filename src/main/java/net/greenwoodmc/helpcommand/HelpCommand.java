@@ -42,11 +42,11 @@ public class HelpCommand extends JavaPlugin {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         FileConfiguration config = getConfig();
-        Player player = (Player)sender;
         if (!(sender instanceof Player)) {
-            sender.sendMessage(config.getString("playersOnly"));
+            getLogger().warning(config.getString("playersOnly"));
             return true;
         } else {
+            Player player = (Player)sender;
             String ver;
             String arg1;
             if (cmd.getName().equalsIgnoreCase("help")) {
