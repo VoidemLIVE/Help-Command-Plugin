@@ -15,6 +15,7 @@ public class HelpCommand extends JavaPlugin {
         getLogger().info("Help Command Enabled");
         getLogger().info("Author: VoidemLIVE");
         getLogger().info("Version: " + getDescription().getVersion());
+        getLogger().info("Version(s) intended for: 1.18-1.20.2");
         int pluginId = 15592;
         new Metrics(this, pluginId);
         getConfig().options().copyDefaults();
@@ -40,33 +41,32 @@ public class HelpCommand extends JavaPlugin {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        FileConfiguration config = getConfig();
+        Player player = (Player)sender;
         if (!(sender instanceof Player)) {
-            sender.sendMessage(getConfig().getString("playersOnly"));
+            sender.sendMessage(config.getString("playersOnly"));
             return true;
         } else {
-            Player player = (Player)sender;
             String ver;
             String arg1;
             if (cmd.getName().equalsIgnoreCase("help")) {
-                if (getConfig().getBoolean("helpcmd")) {
-                    FileConfiguration config = getConfig();
+                if (config.getBoolean("helpcmd")) {
                     ver = (String)config.getStringList("help").stream().collect(Collectors.joining("\n"));
                     player.sendMessage(TextUtil.color(ver));
                 } else {
-                    arg1 = getConfig().getString("disabled");
+                    arg1 = config.getString("disabled");
                     player.sendMessage(TextUtil.color(arg1));
                 }
             } else if (cmd.getName().equalsIgnoreCase("hc")) {
                 if (args.length >= 1) {
                     arg1 = args[0];
                     if (arg1.equalsIgnoreCase("reload")) {
-                        ver = getConfig().getString("reload");
+                        ver = config.getString("reload");
                         reloadConfig();
                         player.sendMessage(TextUtil.color(ver));
                     }
 
                     if (arg1.equalsIgnoreCase("show")) {
-                        FileConfiguration config = getConfig();
                         String helpmsg = (String)config.getStringList("help").stream().collect(Collectors.joining("\n"));
                         player.sendMessage(TextUtil.color(helpmsg));
                     }
@@ -81,7 +81,7 @@ public class HelpCommand extends JavaPlugin {
                         player.sendMessage(TextUtil.color("&6Support Discord: &ehttps://discord.com/invite/vbcqu6rts8"));
                     }
                 } else {
-                    arg1 = getConfig().getString("noargument");
+                    arg1 = config.getString("noargument");
                     player.sendMessage(TextUtil.color(arg1));
                 }
             }
