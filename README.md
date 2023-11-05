@@ -1,6 +1,5 @@
-# Help-Command-Plugin
-
-
+# Help-Command-Plugin V2.5.9
+All code has been packaged and uploaded to SpigotMC
 ## THIS PLUGIN SUPPORTS 1.20.2
 
 This plugin allows you to create a simple help message in chat for players to see when they run the /help command.
@@ -9,8 +8,10 @@ This plugin allows you to create a simple help message in chat for players to se
 
 Download pages:
 + [SpigotMC](https://www.spigotmc.org/resources/help-command.102926/)
-+ [BuiltByBit](https://builtbybit.com/resources/help-command.28957/)
 + [Github Releases](https://github.com/VoidemLIVE/Help-Command-Plugin/releases)
++ [BuiltByBit](https://builtbybit.com/resources/help-command.28957/)
+
+:warning: I have stopped updating the plugin on BuildByBit, the latest version on BBB is V2.5.5 :warning:
 
 ## All commands & permissions available in the [Documentation](https://hcdocs.voidem.com/)
 
