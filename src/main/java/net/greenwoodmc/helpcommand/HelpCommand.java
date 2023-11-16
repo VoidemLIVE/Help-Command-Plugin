@@ -2,7 +2,9 @@ package net.greenwoodmc.helpcommand;
 
 import net.greenwoodmc.helpcommand.tabcomplete.hc;
 import net.greenwoodmc.helpcommand.util.TextUtil;
+
 import java.util.stream.Collectors;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -42,51 +44,46 @@ public class HelpCommand extends JavaPlugin {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         FileConfiguration config = getConfig();
-        if (!(sender instanceof Player)) {
-            getLogger().warning(config.getString("playersOnly"));
-            return true;
-        } else {
-            Player player = (Player)sender;
-            String ver;
-            String arg1;
-            if (cmd.getName().equalsIgnoreCase("help")) {
-                if (config.getBoolean("helpcmd")) {
-                    ver = (String)config.getStringList("help").stream().collect(Collectors.joining("\n"));
-                    player.sendMessage(TextUtil.color(ver));
-                } else {
-                    arg1 = config.getString("disabled");
-                    player.sendMessage(TextUtil.color(arg1));
-                }
-            } else if (cmd.getName().equalsIgnoreCase("hc")) {
-                if (args.length >= 1) {
-                    arg1 = args[0];
-                    if (arg1.equalsIgnoreCase("reload")) {
-                        ver = config.getString("reload");
-                        reloadConfig();
-                        player.sendMessage(TextUtil.color(ver));
-                    }
-
-                    if (arg1.equalsIgnoreCase("show")) {
-                        String helpmsg = (String)config.getStringList("help").stream().collect(Collectors.joining("\n"));
-                        player.sendMessage(TextUtil.color(helpmsg));
-                    }
-
-                    if (arg1.equalsIgnoreCase("version")) {
-                        ver = getDescription().getVersion();
-                        player.sendMessage("HelpCommand Version: " + ver);
-                    }
-
-                    if (arg1.equalsIgnoreCase("help")) {
-                        player.sendMessage(TextUtil.color("&6HelpCommand wiki: &ehttps://voidemtwitch.gitbook.io/help-command/"));
-                        player.sendMessage(TextUtil.color("&6Support Discord: &ehttps://discord.com/invite/vbcqu6rts8"));
-                    }
-                } else {
-                    arg1 = config.getString("noargument");
-                    player.sendMessage(TextUtil.color(arg1));
-                }
+        String ver;
+        String arg1;
+        if (cmd.getName().equalsIgnoreCase("help") && sender instanceof Player) {
+            Player player = (Player) sender;
+            if (config.getBoolean("helpcmd")) {
+                ver = (String) config.getStringList("help").stream().collect(Collectors.joining("\n"));
+                player.sendMessage(TextUtil.color(ver));
+            } else {
+                arg1 = config.getString("disabled");
+                player.sendMessage(TextUtil.color(arg1));
             }
+        } else if (cmd.getName().equalsIgnoreCase("hc")) {
+            if (args.length >= 1) {
+                arg1 = args[0];
+                if (arg1.equalsIgnoreCase("reload")) {
+                    ver = config.getString("reload");
+                    reloadConfig();
+                    sender.sendMessage(TextUtil.color(ver));
+                }
 
-            return true;
+                if (arg1.equalsIgnoreCase("show")) {
+                    String helpmsg = (String) config.getStringList("help").stream().collect(Collectors.joining("\n"));
+                    sender.sendMessage(TextUtil.color(helpmsg));
+                }
+
+                if (arg1.equalsIgnoreCase("version")) {
+                    ver = getDescription().getVersion();
+                    sender.sendMessage("HelpCommand Version: " + ver);
+                }
+
+                if (arg1.equalsIgnoreCase("help")) {
+                    sender.sendMessage(TextUtil.color("&6HelpCommand wiki: &ehttps://voidemtwitch.gitbook.io/help-command/"));
+                    sender.sendMessage(TextUtil.color("&6Support Discord: &ehttps://discord.com/invite/vbcqu6rts8"));
+                }
+            } else {
+                arg1 = config.getString("noargument");
+                sender.sendMessage(TextUtil.color(arg1));
+            }
         }
+
+        return true;
     }
 }
