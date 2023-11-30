@@ -1,10 +1,10 @@
-# Help-Command-Plugin V2.5.9
+# Help-Command-Plugin V2.6
 All code has been packaged and uploaded to SpigotMC
 ## THIS PLUGIN SUPPORTS 1.20.2
 
 This plugin allows you to create a simple help message in chat for players to see when they run the /help command.
 
-![Help Command Banner](https://i.imgur.com/Mh9ylUT.png)
+![Help Command Banner](https://i.imgur.com/HX9MCA2.png)
 
 Download pages:
 + [SpigotMC](https://www.spigotmc.org/resources/help-command.102926/)
