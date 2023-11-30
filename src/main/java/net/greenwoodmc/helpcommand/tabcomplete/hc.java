@@ -10,7 +10,7 @@ import org.bukkit.command.TabCompleter;
 import org.bukkit.util.StringUtil;
 
 public class hc implements TabCompleter {
-    private static final String[] COMMANDS = new String[]{"reload", "help", "version", "show"};
+    private static final String[] COMMANDS = new String[]{"reload", "help", "version"};
 
     public hc() {
     }

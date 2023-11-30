@@ -2,6 +2,12 @@
 # You can edit values here for the plugin
 
 ######################################
+# Support
+######################################
+# Documentation: https://hcdocs.voidem.com/
+# Discord server: https://discord.com/invite/vbcqu6rts8
+# Discord user: voidem
+######################################
 # Plugin config
 ######################################
 
@@ -10,15 +16,60 @@
 ######################################
 
 help:
-  - "&5----------"
-  - "&b&lServer&d&lName"
-  - "&5----------"
-  - "&b/spawn &7&l- &r&dTakes you to spawn"
-  - "&b/kill &7&l- &r&dKills a player"
-  - "&b/gms &7&l- &r&dEnters survival mode"
-  - "&b/gmc &7&l- &r&dEnters creative mode"
-  - "&5----------"
+  1:
+    - "&5----------"
+    - "&b&lServer&d&lName"
+    - "&bPage 1"
+    - "&5----------"
+    - "&b/spawn &7&l- &r&dTakes you to spawn"
+    - "&b/kill &7&l- &r&dKills a player"
+    - "&b/gms &7&l- &r&dEnters survival mode"
+    - "&b/gmc &7&l- &r&dEnters creative mode"
+    - "&5----------"
+  2:
+    - "&5----------"
+    - "&b&lServer&d&lName"
+    - "&bPage 2"
+    - "&5----------"
+    - "&b/warps &7&l- &r&dLists available warps"
+    - "&b/kits &7&l- &r&dLists available kits"
+    - "&b/homes &7&l- &r&dLists available homes"
+    - "&b/nuke &7&l- &r&dDrops a nuke"
+    - "&5----------"
+  3:
+    - "&5----------"
+    - "&b&lServer&d&lName"
+    - "&bPage 3"
+    - "&5----------"
+    - "&b/weather &7&l- &r&dChange weather"
+    - "&b/tpa &7&l- &r&dRequest to be teleported"
+    - "&b/whois &7&l- &r&dShow info of a user"
+    - "&b/top &7&l- &r&dAscend to the next block above you"
+    - "&5----------"
+  4:
+    - "&5----------"
+    - "&b&lServer&d&lName"
+    - "&bPage 4"
+    - "&5----------"
+    - "&b/delhome &7&l- &r&dDeletes a home"
+    - "&b/enderchest &7&l- &r&dOpens a personal enderchest"
+    - "&b/speed &7&l- &r&dChange player speed"
+    - "&b/tpall &7&l- &r&dTPs all players to you"
+    - "&5----------"
+  5:
+    - "&5----------"
+    - "&b&lServer&d&lName"
+    - "&bPage 5"
+    - "&5----------"
+    - "&b/time &7&l- &r&dChange time"
+    - "&b/kick &7&l- &r&dKick a player"
+    - "&b/ban &7&l- &r&dBan a player"
+    - "&b/tpahere &7&l- &r&dRequest to teleport a player to you"
+    - "&5----------"
 
+# It is recommended not to delete these pages and to just use the pagesEnabled list to control which pages are to be available
+
+pagesEnabled: [1,2,3,4,5] # sets the pages that can be accessed (max 5)
 ######################################
 # Enabled Commands
 ######################################
@@ -32,6 +83,12 @@ reload: '&aHelpCommand reloading' # sets message for /hc reload
 disabled: '&cThis command is disabled' # sets message for if a command is disabled
 noargument: '&cPlease use an argument' # sets message for /hc if no arguments are provided
 playersOnly: 'Only players can use this command' # sets message for when a command is run from the console
+pageNA: '&cThis page does not exist!' # sets message for if a page doesn't exist
+
+pagePrompt:
+  mainText: 'Go to page '
+  mainTextColour: 'YELLOW'
+  pageNumberColour: 'GREEN'
 ######################################
 
 # Voidem#2269 On Discord
