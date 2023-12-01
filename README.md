@@ -1,4 +1,4 @@
-# Help-Command-Plugin V2.6
+# Help-Command-Plugin V2.6.2
 All code has been packaged and uploaded to SpigotMC
 ## THIS PLUGIN SUPPORTS 1.20.2
 
