@@ -5,10 +5,13 @@ import net.greenwoodmc.helpcommand.util.TextUtil;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.stream.Collectors;
 
 public class hcCommand implements CommandExecutor {
@@ -31,6 +34,13 @@ public class hcCommand implements CommandExecutor {
                 if (arg1.equalsIgnoreCase("reload")) {
                     ver = config.getString("reload");
                     plug.reloadConfig();
+                    try {
+                        config.load(new File(plug.getDataFolder(), "config.yml"));
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    } catch (InvalidConfigurationException e) {
+                        throw new RuntimeException(e);
+                    }
                     if (isPlayer) {
                         sender.sendMessage(TextUtil.color(ver));
                     } else {
