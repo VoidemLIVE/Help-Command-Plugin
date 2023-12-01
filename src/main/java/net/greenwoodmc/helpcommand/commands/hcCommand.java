@@ -50,10 +50,10 @@ public class hcCommand implements CommandExecutor {
                 if (arg1.equalsIgnoreCase("help")) {
                     if (isPlayer) {
                         sender.sendMessage(TextUtil.color("&6HelpCommand wiki: &ehttps://hcdocs.voidem.com"));
-                        sender.sendMessage(TextUtil.color("&6Support Discord: &ehttps://discord.com/invite/vbcqu6rts8"));
+                        sender.sendMessage(TextUtil.color("&6Support Discord: &ehttps://support.voidem.com"));
                     } else {
                         plug.getLogger().info("HelpCommand wiki: https://hcdocs.voidem.com");
-                        plug.getLogger().info("Support Discord: https://discord.com/invite/vbcqu6rts8");
+                        plug.getLogger().info("Support Discord: https://support.voidem.com");
                     }
                 }
             } else {
