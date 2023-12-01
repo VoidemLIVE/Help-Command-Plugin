@@ -8,6 +8,7 @@ This plugin allows you to create a simple help message in chat for players to se
 
 Download pages:
 + [SpigotMC](https://www.spigotmc.org/resources/help-command.102926/)
++ [PolyMart](https://polymart.org/resource/help-command-1-18-1-20-2.5143#!)
 + [Github Releases](https://github.com/VoidemLIVE/Help-Command-Plugin/releases)
 + [BuiltByBit](https://builtbybit.com/resources/help-command.28957/)
 
