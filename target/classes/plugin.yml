@@ -1,5 +1,5 @@
 name: HelpCommand
-version: '2.6.2-PublicRelease'
+version: '2.6.3-PublicRelease'
 main: net.greenwoodmc.helpcommand.HelpCommand
 api-version: 1.18
 authors: [ VoidemLIVE ]
