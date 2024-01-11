@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "notenoughbees",
+      "name": "notenoughbees",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62003733?v=4",
+      "profile": "https://github.com/notenoughbees",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "Help-Command-Plugin",
+  "projectOwner": "VoidemLIVE"
+}
