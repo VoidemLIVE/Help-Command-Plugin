@@ -1,4 +1,4 @@
-# Help-Command-Plugin V2.6.2
+# Help-Command-Plugin V2.7
 All code has been packaged and uploaded to SpigotMC
 ## THIS PLUGIN SUPPORTS 1.20.4
 
@@ -15,5 +15,16 @@ Download pages:
 :warning: I have stopped updating the plugin on BuildByBit, the latest version on BBB is V2.5.5 :warning:
 
 ## All commands & permissions available in the [Documentation](https://hcdocs.voidem.com/)
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ![Bstats](https://bstats.org/signatures/bukkit/Help%20Plugin.svg)
