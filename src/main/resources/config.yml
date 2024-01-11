@@ -66,10 +66,21 @@ help:
     - "&b/ban &7&l- &r&dBan a player"
     - "&b/tpahere &7&l- &r&dRequest to teleport a player to you"
     - "&5----------"
+  6:
+    - "&5----------"
+    - "&b&lServer&d&lName"
+    - "&bPage 6"
+    - "&5----------"
+    - "&b/fly &7&l- &r&dToggle flying mode"
+    - "&b/nick &7&l- &r&dChange your nickname"
+    - "&b/mail &7&l- &r&dSend a mail to a player"
+    - "&b/beezooka &7&l- &r&dShoot a fake bee in the air"
+    - "&5----------"
 
 # It is recommended not to delete these pages and to just use the pagesEnabled list to control which pages are to be available
 
-pagesEnabled: [1,2,3,4,5] # sets the pages that can be accessed (max 5)
+pagesEnabled: [1,2,3,4,5,6] # sets the pages that can be accessed
+numberOfPages: 6
 ######################################
 # Enabled Commands
 ######################################
