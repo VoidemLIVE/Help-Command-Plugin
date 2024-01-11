@@ -1,6 +1,6 @@
 # Help-Command-Plugin V2.7
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 All code has been packaged and uploaded to SpigotMC
 ## THIS PLUGIN SUPPORTS 1.20.4
@@ -28,6 +28,7 @@ Download pages:
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/notenoughbees"><img src="https://avatars.githubusercontent.com/u/62003733?v=4?s=100" width="100px;" alt="notenoughbees"/><br /><sub><b>notenoughbees</b></sub></a><br /><a href="https://github.com/VoidemLIVE/Help-Command-Plugin/commits?author=notenoughbees" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/giopalma"><img src="https://avatars.githubusercontent.com/u/33783684?v=4?s=100" width="100px;" alt="Giovanni Palma"/><br /><sub><b>Giovanni Palma</b></sub></a><br /><a href="https://github.com/VoidemLIVE/Help-Command-Plugin/commits?author=giopalma" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
