@@ -1,26 +1,35 @@
-# Help-Command-Plugin V2.7
+<div align="center">
+<img align="center" width="200" height="200" src="https://raw.githubusercontent.com/VoidemLIVE/readmeTest/main/helpcommandTransparent.png?token=GHSAT0AAAAAACJ4ZX3SLTKL6WNDSSDINZKEZNEM63A" style="background-color:white;">
+
+[![Downloads](https://img.shields.io/spiget/downloads/102926)](https://www.spigotmc.org/resources/help-command-multiple-pages-hex-codes-1-18-1-20-4.102926/)
+[![License](https://img.shields.io/github/license/VoidemLIVE/Help-Command-Plugin)](https://github.com/VoidemLIVE/Help-Command-Plugin)
+[![Rating](https://img.shields.io/spiget/stars/102926)](https://www.spigotmc.org/resources/help-command-multiple-pages-hex-codes-1-18-1-20-4.102926/)
+[![Servers](https://img.shields.io/bstats/servers/15592)](https://bstats.org/plugin/bukkit/Help%20Plugin/15592)
+[![Players](https://img.shields.io/bstats/players/15592)](https://bstats.org/plugin/bukkit/Help%20Plugin/15592)
+[![Version](https://img.shields.io/spiget/version/102926)](https://www.spigotmc.org/resources/help-command-multiple-pages-hex-codes-1-18-1-20-4.102926/)
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-All code has been packaged and uploaded to SpigotMC
-## THIS PLUGIN SUPPORTS 1.20.4
 
-This plugin allows you to create a simple help message in chat for players to see when they run the /help command.
+<p>An easy to use plugin to help your players out with a fully customizable '/help' command</p>
+</div>
 
-![Help Command Banner](https://i.imgur.com/HX9MCA2.png)
 
-Download pages:
+## Download
 + [SpigotMC](https://www.spigotmc.org/resources/help-command.102926/)
 + [PolyMart](https://polymart.org/resource/help-command-1-18-1-20-2.5143#!)
 + [Github Releases](https://github.com/VoidemLIVE/Help-Command-Plugin/releases)
-+ [BuiltByBit](https://builtbybit.com/resources/help-command.28957/)
 
-:warning: I have stopped updating the plugin on BuildByBit, the latest version on BBB is V2.5.5 :warning:
+## Documentation
+The documentation goes through everything to do with the plugin. This includes permissions, commands, different pages, colour codes and more! 
+<br>
+The documentation is currently only updated to Version 2.6.3, it will be updated to V2.7 soon!
 
-## All commands & permissions available in the [Documentation](https://hcdocs.voidem.com/)
+> https://hcdocs.voidem.com/
 
-## Contributors
-
+<div align="center">
+<h2>Contributors</h2>
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -44,5 +53,14 @@ Download pages:
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+</div>
 
-![Bstats](https://bstats.org/signatures/bukkit/Help%20Plugin.svg)
+## Future additions
+- Add unlimited pages (V2.7) to documentation
+- Add building the plugin to documentation
+
+Create an issue or contact me on my [Discord server](https://support.voidem.com) if you have any suggestions!
+<br>
+Or create a pull request.
+
+[![Bstats](https://bstats.org/signatures/bukkit/Help%20Plugin.svg)](https://bstats.org/plugin/bukkit/Help%20Plugin/15592)
