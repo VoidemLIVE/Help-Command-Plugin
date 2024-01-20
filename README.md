@@ -13,6 +13,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p>An easy to use plugin to help your players out with a fully customizable '/help' command</p>
+<h3>1000+ Downloads!</h3>
 </div>
 
 
