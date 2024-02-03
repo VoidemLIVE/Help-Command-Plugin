@@ -1,5 +1,6 @@
 package net.greenwoodmc.helpcommand.commands;
 
+import me.clip.placeholderapi.PlaceholderAPI;
 import net.greenwoodmc.helpcommand.HelpCommand;
 import net.greenwoodmc.helpcommand.util.TextUtil;
 import net.md_5.bungee.api.ChatColor;
@@ -25,6 +26,7 @@ public class help implements CommandExecutor {
         } else {
             Player player = (Player) sender;
             String ver;
+            String ver2;
             Integer currPageNumber;
             Integer nextPageNumber;
             String colour1 = config.getString("pagePrompt.mainTextColour");
@@ -46,7 +48,8 @@ public class help implements CommandExecutor {
                             // If between 1 and the last page number - 1
                             if (enabledPages.contains(currPageNumber)) {
                                 ver = (String) config.getStringList("help." + currPageNumber).stream().collect(Collectors.joining("\n"));
-                                player.sendMessage(TextUtil.color(ver));
+                                ver2 = PlaceholderAPI.setPlaceholders(player, ver);
+                                player.sendMessage(TextUtil.color(ver2));
                                 if (enabledPages.contains(nextPageNumber)) {
                                     ComponentBuilder nextPageMSG = new ComponentBuilder(nextPage)
                                             .color(COLOUR1)
@@ -62,7 +65,8 @@ public class help implements CommandExecutor {
                             // If the last page number
                             if (enabledPages.contains(lastPage)) {
                                 ver = (String) config.getStringList("help." + lastPage).stream().collect(Collectors.joining("\n"));
-                                player.sendMessage(TextUtil.color(ver));
+                                ver2 = PlaceholderAPI.setPlaceholders(player, ver);
+                                player.sendMessage(TextUtil.color(ver2));
                             } else {
                                 player.sendMessage(TextUtil.color(config.getString("pageNA")));
                             }
@@ -75,7 +79,8 @@ public class help implements CommandExecutor {
                         if (enabledPages.contains(2)) {
                             // If page 2 exists
                             ver = (String) config.getStringList("help.1").stream().collect(Collectors.joining("\n"));
-                            player.sendMessage(TextUtil.color(ver));
+                            ver2 = PlaceholderAPI.setPlaceholders(player, ver);
+                            player.sendMessage(TextUtil.color(ver2));
                             ComponentBuilder nextPageMSG = new ComponentBuilder(nextPage)
                                     .color(COLOUR1)
                                     .event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/help 2"))
@@ -85,7 +90,8 @@ public class help implements CommandExecutor {
                         } else {
                             // If page 2 doesn't exist
                             ver = (String) config.getStringList("help.1").stream().collect(Collectors.joining("\n"));
-                            player.sendMessage(TextUtil.color(ver));
+                            ver2 = PlaceholderAPI.setPlaceholders(player, ver);
+                            player.sendMessage(TextUtil.color(ver2));
                         }
                     }
                 } else {

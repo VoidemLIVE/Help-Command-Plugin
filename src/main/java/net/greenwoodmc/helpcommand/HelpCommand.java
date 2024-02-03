@@ -1,6 +1,7 @@
 package net.greenwoodmc.helpcommand;
 
 import net.greenwoodmc.helpcommand.commands.hcCommand;
+import net.greenwoodmc.helpcommand.listeners.PlayerJoinListener;
 import net.greenwoodmc.helpcommand.tabcomplete.hc;
 import net.greenwoodmc.helpcommand.util.TextUtil;
 
@@ -23,9 +24,15 @@ import net.greenwoodmc.helpcommand.commands.help;
 public class HelpCommand extends JavaPlugin {
 
     public void onEnable() {
+
         getLogger().info("Help Command Enabled");
         getLogger().info("Author: VoidemLIVE");
         getLogger().info("Version: " + getDescription().getVersion());
+        if (getServer().getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            getLogger().info("PlaceholderAPI: Enabled");
+        } else {
+            getLogger().info("PlaceholderAPI: Disabled");
+        }
         int pluginId = 15592;
         new Metrics(this, pluginId);
         getConfig().options().copyDefaults();
@@ -33,6 +40,7 @@ public class HelpCommand extends JavaPlugin {
         getCommand("help").setExecutor(new help());
         getCommand("hc").setExecutor(new hcCommand());
         getCommand("hc").setTabCompleter(new hc());
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
 
         try {
             Class.forName("org.spigotmc.SpigotConfig");

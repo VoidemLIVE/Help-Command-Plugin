@@ -15,6 +15,9 @@
 # Main Help Command
 ######################################
 
+version: "2.7.5" # DO NOT CHANGE THIS VALUE
+updateCheck: true # recommended to keep this value as true
+
 help:
   1:
     - "&5----------"
@@ -101,5 +104,3 @@ pagePrompt:
   mainTextColour: 'YELLOW'
   pageNumberColour: 'GREEN'
 ######################################
-
-# Voidem#2269 On Discord

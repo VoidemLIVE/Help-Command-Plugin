@@ -1,11 +1,12 @@
 name: HelpCommand
-version: '2.6.3-PublicRelease'
+version: '2.7.5-PublicRelease'
 main: net.greenwoodmc.helpcommand.HelpCommand
 api-version: 1.18
 authors: [ VoidemLIVE ]
 description: Simple custom help command
 website: helpcommand.greenwoodmc.net
 
+softdepend: [PlaceholderAPI]
 
 commands:
   help:
