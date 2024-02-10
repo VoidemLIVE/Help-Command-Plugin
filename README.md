@@ -62,6 +62,7 @@ The documentation is currently only updated to Version 2.6.3, it will be updated
 - Add unlimited pages (V2.7) to documentation
 - Add building the plugin to documentation
 - Add PlaceholderAPI to documentation
+- Add previous page feature
 
 Create an issue or contact me on my [Discord server](https://support.voidem.com) if you have any suggestions!
 <br>
