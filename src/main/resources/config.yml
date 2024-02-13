@@ -15,7 +15,7 @@
 # Main Help Command
 ######################################
 
-version: "2.7.5" # DO NOT CHANGE THIS VALUE
+version: "2.7.6" # DO NOT CHANGE THIS VALUE
 updateCheck: true # recommended to keep this value as true
 
 help:
@@ -100,7 +100,7 @@ playersOnly: 'Only players can use this command' # sets message for when a comma
 pageNA: '&cThis page does not exist!' # sets message for if a page doesn't exist
 
 pagePrompt:
-  mainText: 'Go to page '
-  mainTextColour: 'YELLOW'
   pageNumberColour: 'GREEN'
+  pageTextColour: 'GOLD'
+  page: 'Page'
 ######################################

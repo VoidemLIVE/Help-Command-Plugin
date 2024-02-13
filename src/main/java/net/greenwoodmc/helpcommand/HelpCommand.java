@@ -57,4 +57,8 @@ public class HelpCommand extends JavaPlugin {
         getLogger().info("Author: VoidemLIVE");
         getLogger().info("Version: " + getDescription().getVersion());
     }
+
+    public static boolean isPapiInstalled(JavaPlugin plugin) {
+        return plugin.getServer().getPluginManager().getPlugin("PlaceholderAPI") != null;
+    }
 }
