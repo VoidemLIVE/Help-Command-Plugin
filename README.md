@@ -15,16 +15,20 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p>An easy to use plugin to help your players out with a fully customizable '/help' command</p>
+
 <h3>1000+ Downloads!</h3>
+
 </div>
 
 
 ## Download
+
 + [SpigotMC](https://www.spigotmc.org/resources/help-command.102926/)
 + [PolyMart](https://polymart.org/resource/help-command-1-18-1-20-2.5143#!)
 + [Github Releases](https://github.com/VoidemLIVE/Help-Command-Plugin/releases)
 
 ## Documentation
+
 The documentation goes through everything to do with the plugin. This includes permissions, commands, different pages, colour codes and more! 
 <br>
 The documentation is currently only updated to Version 2.6.3, it will be updated to V2.7.5 soon!
@@ -32,7 +36,9 @@ The documentation is currently only updated to Version 2.6.3, it will be updated
 > https://hcdocs.voidem.com/
 
 <div align="center">
+
 <h2>Contributors</h2>
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -59,10 +65,11 @@ The documentation is currently only updated to Version 2.6.3, it will be updated
 </div>
 
 ## Future additions
-- Add unlimited pages (V2.7) to documentation
-- Add building the plugin to documentation
-- Add PlaceholderAPI to documentation
-- Add previous page feature
+
++ Add unlimited pages (V2.7) to documentation
++ Add building the plugin to documentation
++ Add PlaceholderAPI to documentation
++ Add previous page feature
 
 Create an issue or contact me on my [Discord server](https://support.voidem.com) if you have any suggestions!
 <br>
