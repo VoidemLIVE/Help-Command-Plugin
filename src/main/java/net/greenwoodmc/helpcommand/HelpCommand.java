@@ -3,21 +3,6 @@ package net.greenwoodmc.helpcommand;
 import net.greenwoodmc.helpcommand.commands.hcCommand;
 import net.greenwoodmc.helpcommand.listeners.PlayerJoinListener;
 import net.greenwoodmc.helpcommand.tabcomplete.hc;
-import net.greenwoodmc.helpcommand.util.TextUtil;
-
-import java.awt.*;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import net.md_5.bungee.api.ChatColor;
-import net.md_5.bungee.api.chat.BaseComponent;
-import net.md_5.bungee.api.chat.ClickEvent;
-import net.md_5.bungee.api.chat.ComponentBuilder;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Player;
-import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.plugin.java.JavaPlugin;
 import net.greenwoodmc.helpcommand.commands.help;
 

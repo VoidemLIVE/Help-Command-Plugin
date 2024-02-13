@@ -12,7 +12,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.stream.Collectors;
 
 public class hcCommand implements CommandExecutor {
     FileConfiguration config = JavaPlugin.getPlugin(HelpCommand.class).getConfig();
