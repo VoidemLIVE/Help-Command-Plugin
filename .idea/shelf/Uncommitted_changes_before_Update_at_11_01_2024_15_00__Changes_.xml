@@ -1,0 +1,64 @@
+<changelist name="Uncommitted_changes_before_Update_at_11_01_2024_15_00_[Changes]" date="1704985233075" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_01_2024_15_00_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11/01/2024 15:00 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/original-HelpCommand-2.5.5.jar" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/original-HelpCommand-2.5.7.jar" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/original-HelpCommand-2.5.jar" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/net/greenwoodmc/helpcommand/tabcomplete/hc.class" />
+    <option name="AFTER_PATH" value="target/classes/net/greenwoodmc/helpcommand/tabcomplete/hc.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_01_2024_15_00_[Changes]/hc.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/HelpCommand-2.5.5.jar" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/original-HelpCommand-2.5.6.jar" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/HelpCommand-2.5.6.jar" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/net/greenwoodmc/helpcommand/HelpCommand.class" />
+    <option name="AFTER_PATH" value="target/classes/net/greenwoodmc/helpcommand/HelpCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_01_2024_15_00_[Changes]/HelpCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/HelpCommand-2.5.7.jar" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/HelpCommand-2.5.jar" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>

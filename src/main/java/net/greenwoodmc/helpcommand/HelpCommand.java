@@ -1,8 +1,10 @@
 package net.greenwoodmc.helpcommand;
 
 import net.greenwoodmc.helpcommand.commands.hcCommand;
+import net.greenwoodmc.helpcommand.listeners.helpAliases;
 import net.greenwoodmc.helpcommand.listeners.PlayerJoinListener;
 import net.greenwoodmc.helpcommand.tabcomplete.hc;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import net.greenwoodmc.helpcommand.commands.help;
 
@@ -22,10 +24,18 @@ public class HelpCommand extends JavaPlugin {
         new Metrics(this, pluginId);
         getConfig().options().copyDefaults();
         saveDefaultConfig();
+        FileConfiguration config = getConfig();
         getCommand("help").setExecutor(new help());
         getCommand("hc").setExecutor(new hcCommand());
         getCommand("hc").setTabCompleter(new hc());
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
+        if (!config.getStringList("aliases").isEmpty()) {
+            getLogger().info("Aliases: Enabled");
+        } else {
+            getLogger().info("Aliases: Disabled");
+        }
+
+        getServer().getPluginManager().registerEvents(new helpAliases(), this);
 
         try {
             Class.forName("org.spigotmc.SpigotConfig");

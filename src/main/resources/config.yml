@@ -5,8 +5,10 @@
 # Support
 ######################################
 # Documentation: https://hcdocs.voidem.com/
-# Discord server: https://discord.com/invite/vbcqu6rts8
+# Discord server: https://support.voidem.com/
 # Discord user: voidem
+# Spigot user: VoidemLIVE
+# GitHub repository: https://github.com/VoidemLIVE/Help-Command-Plugin
 ######################################
 # Plugin config
 ######################################
@@ -15,75 +17,76 @@
 # Main Help Command
 ######################################
 
-version: "2.7.6" # DO NOT CHANGE THIS VALUE
+version: "2.8" # DO NOT CHANGE THIS VALUE
 updateCheck: true # recommended to keep this value as true
 
 help:
   1:
     - "&5----------"
     - "&b&lServer&d&lName"
-    - "&bPage 1"
+    - "&bPage 1: Navigation"
     - "&5----------"
-    - "&b/spawn &7&l- &r&dTakes you to spawn"
-    - "&b/kill &7&l- &r&dKills a player"
-    - "&b/gms &7&l- &r&dEnters survival mode"
-    - "&b/gmc &7&l- &r&dEnters creative mode"
+    - "&b/warp &7&l- &r&dTeleport to predefined locations"
+    - "&b/home &7&l- &r&dTeleport to your set home location"
+    - "&b/tpa &7&l- &r&dRequest to teleport to another player"
+    - "&b/tpahere &7&l- &r&dRequest another player to teleport to you"
     - "&5----------"
   2:
     - "&5----------"
     - "&b&lServer&d&lName"
-    - "&bPage 2"
+    - "&bPage 2: Utility"
     - "&5----------"
-    - "&b/warps &7&l- &r&dLists available warps"
-    - "&b/kits &7&l- &r&dLists available kits"
-    - "&b/homes &7&l- &r&dLists available homes"
-    - "&b/nuke &7&l- &r&dDrops a nuke"
+    - "&b/heal &7&l- &r&dRestore your health"
+    - "&b/feed &7&l- &r&dSatisfy your hunger"
+    - "&b/repair &7&l- &r&dRepair your equipped items"
+    - "&b/vote &7&l- &r&dVote for the server"
     - "&5----------"
   3:
     - "&5----------"
     - "&b&lServer&d&lName"
-    - "&bPage 3"
+    - "&bPage 3: Interaction"
     - "&5----------"
-    - "&b/weather &7&l- &r&dChange weather"
-    - "&b/tpa &7&l- &r&dRequest to be teleported"
-    - "&b/whois &7&l- &r&dShow info of a user"
-    - "&b/top &7&l- &r&dAscend to the next block above you"
+    - "&b/msg &7&l- &r&dSend a private message to another player"
+    - "&b/mute &7&l- &r&dMute a player in the chat"
+    - "&b/unmute &7&l- &r&dUnmute a previously muted player"
+    - "&b/report &7&l- &r&dReport a player for misconduct"
     - "&5----------"
   4:
     - "&5----------"
     - "&b&lServer&d&lName"
-    - "&bPage 4"
+    - "&bPage 4: Management"
     - "&5----------"
-    - "&b/delhome &7&l- &r&dDeletes a home"
-    - "&b/enderchest &7&l- &r&dOpens a personal enderchest"
-    - "&b/speed &7&l- &r&dChange player speed"
-    - "&b/tpall &7&l- &r&dTPs all players to you"
+    - "&b/ban &7&l- &r&dBan a player from the server"
+    - "&b/kick &7&l- &r&dKick a player from the server"
+    - "&b/mutechat &7&l- &r&dMute the global chat"
+    - "&b/clearinventory &7&l- &r&dClear your inventory"
     - "&5----------"
   5:
     - "&5----------"
     - "&b&lServer&d&lName"
-    - "&bPage 5"
+    - "&bPage 5: Fun Commands"
     - "&5----------"
-    - "&b/time &7&l- &r&dChange time"
-    - "&b/kick &7&l- &r&dKick a player"
-    - "&b/ban &7&l- &r&dBan a player"
-    - "&b/tpahere &7&l- &r&dRequest to teleport a player to you"
+    - "&b/summon &7&l- &r&dSummon a mob"
+    - "&b/lightning &7&l- &r&dStrike lightning at a location"
+    - "&b/tpall &7&l- &r&dTeleport all players to your location"
+    - "&b/fly &7&l- &r&dToggle flying mode"
     - "&5----------"
   6:
     - "&5----------"
     - "&b&lServer&d&lName"
-    - "&bPage 6"
+    - "&bPage 6: Miscellaneous"
     - "&5----------"
-    - "&b/fly &7&l- &r&dToggle flying mode"
-    - "&b/nick &7&l- &r&dChange your nickname"
-    - "&b/mail &7&l- &r&dSend a mail to a player"
-    - "&b/beezooka &7&l- &r&dShoot a fake bee in the air"
+    - "&b/stats &7&l- &r&dDisplay your player statistics"
+    - "&b/afk &7&l- &r&dSet yourself as away from keyboard"
+    - "&b/rules &7&l- &r&dDisplay server rules"
+    - "&b/reportbug &7&l- &r&dReport a bug to the server administrators"
     - "&5----------"
+
 
 # It is recommended not to delete these pages and to just use the pagesEnabled list to control which pages are to be available
 
 pagesEnabled: [1,2,3,4,5,6] # sets the pages that can be accessed
-numberOfPages: 6
+#aliases: ["helpnav", "helputil", "helpinteract", "helpmanage", "helpfun", "helpmisc"] # sets the aliases for the help command. REQUIRES FULL SERVER RELOAD/RESTART
 ######################################
 # Enabled Commands
 ######################################
@@ -100,6 +103,7 @@ playersOnly: 'Only players can use this command' # sets message for when a comma
 pageNA: '&cThis page does not exist!' # sets message for if a page doesn't exist
 
 pagePrompt:
+  enabled: true
   pageNumberColour: 'GREEN'
   pageTextColour: 'GOLD'
   page: 'Page'

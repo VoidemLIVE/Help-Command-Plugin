@@ -36,10 +36,10 @@ public class help implements CommandExecutor {
             ChatColor COLOUR1 = ChatColor.valueOf(colour1);
             ChatColor COLOUR2 = ChatColor.valueOf(colour2);
             List<Integer> enabledPages = config.getIntegerList("pagesEnabled");
-            Integer lastPage = config.getInt("numberOfPages");
+            Integer lastPage = enabledPages.get(enabledPages.size() - 1);
             JavaPlugin plug = JavaPlugin.getPlugin(HelpCommand.class);
             boolean papiInstalled = HelpCommand.isPapiInstalled(plug);
-
+            Boolean pagePromptEnabled = config.getBoolean("pagePrompt.enabled");
             if (cmd.getName().equalsIgnoreCase("help")) {
                 if (config.getBoolean("helpcmd")) {
                     if (args.length >= 1 && !args[0].equals("1")) {
@@ -57,19 +57,21 @@ public class help implements CommandExecutor {
                                     ver2 = ver;
                                 }
                                 player.sendMessage(TextUtil.color(ver2));
-                                if (enabledPages.contains(nextPageNumber)) {
-                                    String previousPage = "[<< " + previousPageNumber + "]";
-                                    String nextPage = "[" + nextPageNumber + " >>]";
-                                    String currentPage = pageText + " " + currPageNumber;
-                                    ComponentBuilder nextPageMSG = new ComponentBuilder(previousPage)
-                                            .color(COLOUR1)
-                                            .event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/help " + previousPageNumber))
-                                            .append(" " + currentPage + " ")
-                                            .color(COLOUR2)
-                                            .append(nextPage)
-                                            .color(COLOUR1)
-                                            .event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/help " + nextPageNumber));
-                                    player.spigot().sendMessage(nextPageMSG.create());
+                                if (pagePromptEnabled) {
+                                    if (enabledPages.contains(nextPageNumber)) {
+                                        String previousPage = "[<< " + previousPageNumber + "]";
+                                        String nextPage = "[" + nextPageNumber + " >>]";
+                                        String currentPage = pageText + " " + currPageNumber;
+                                        ComponentBuilder nextPageMSG = new ComponentBuilder(previousPage)
+                                                .color(COLOUR1)
+                                                .event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/help " + previousPageNumber))
+                                                .append(" " + currentPage + " ")
+                                                .color(COLOUR2)
+                                                .append(nextPage)
+                                                .color(COLOUR1)
+                                                .event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/help " + nextPageNumber));
+                                        player.spigot().sendMessage(nextPageMSG.create());
+                                    }
                                 }
                             } else {
                                 player.sendMessage(TextUtil.color(config.getString("pageNA")));
@@ -84,12 +86,14 @@ public class help implements CommandExecutor {
                                     ver2 = ver;
                                 }
                                 player.sendMessage(TextUtil.color(ver2));
-                                ComponentBuilder nextPageMSG = new ComponentBuilder("[<< " + previousPageNumber + "] ")
-                                        .color(COLOUR1)
-                                        .event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/help " + previousPageNumber))
-                                        .append(pageText + " " + currPageNumber)
-                                        .color(COLOUR2);
-                                player.spigot().sendMessage(nextPageMSG.create());
+                                if (pagePromptEnabled) {
+                                    ComponentBuilder nextPageMSG = new ComponentBuilder("[<< " + previousPageNumber + "] ")
+                                            .color(COLOUR1)
+                                            .event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/help " + previousPageNumber))
+                                            .append(pageText + " " + currPageNumber)
+                                            .color(COLOUR2);
+                                    player.spigot().sendMessage(nextPageMSG.create());
+                                }
                             } else {
                                 player.sendMessage(TextUtil.color(config.getString("pageNA")));
                             }
@@ -108,12 +112,14 @@ public class help implements CommandExecutor {
                                 ver2 = ver;
                             }
                             player.sendMessage(TextUtil.color(ver2));
-                            ComponentBuilder nextPageMSG = new ComponentBuilder(pageText + " 1")
-                                    .color(COLOUR2)
-                                    .append(" [2 >>]")
-                                    .color(COLOUR1)
-                                    .event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/help 2"));
-                            player.spigot().sendMessage(nextPageMSG.create());
+                            if (pagePromptEnabled) {
+                                ComponentBuilder nextPageMSG = new ComponentBuilder(pageText + " 1")
+                                        .color(COLOUR2)
+                                        .append(" [2 >>]")
+                                        .color(COLOUR1)
+                                        .event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/help 2"));
+                                player.spigot().sendMessage(nextPageMSG.create());
+                            }
                         } else {
                             // If page 2 doesn't exist
                             ver = (String) config.getStringList("help.1").stream().collect(Collectors.joining("\n"));
