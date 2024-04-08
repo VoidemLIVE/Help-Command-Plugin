@@ -30,9 +30,6 @@
 The documentation goes through everything to do with the plugin. 
 This includes permissions, commands, different pages, 
 colour codes and more! 
-<br>
-The documentation is currently only updated to 
-Version 2.6.3, it will be updated to V2.7.5 soon!
 
 > [Documentation](https://hcdocs.voidem.com/)
 
@@ -67,7 +64,6 @@ Version 2.6.3, it will be updated to V2.7.5 soon!
 
 ## Future additions
 
-- Add unlimited pages (V2.7) to documentation
 - Add building the plugin to documentation
 - Add PlaceholderAPI to documentation
 
