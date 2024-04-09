@@ -4,9 +4,16 @@ import net.greenwoodmc.helpcommand.commands.hcCommand;
 import net.greenwoodmc.helpcommand.listeners.helpAliases;
 import net.greenwoodmc.helpcommand.listeners.PlayerJoinListener;
 import net.greenwoodmc.helpcommand.tabcomplete.hc;
+import org.bukkit.command.CommandMap;
+import org.bukkit.command.CommandSender;
+import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import net.greenwoodmc.helpcommand.commands.help;
+import org.jetbrains.annotations.NotNull;
+
+import java.lang.reflect.Field;
+import java.util.List;
 
 public class HelpCommand extends JavaPlugin {
 
@@ -31,11 +38,11 @@ public class HelpCommand extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
         if (!config.getStringList("aliases").isEmpty()) {
             getLogger().info("Aliases: Enabled");
+            getServer().getPluginManager().registerEvents(new helpAliases(), this);
+            registerAliases();
         } else {
             getLogger().info("Aliases: Disabled");
         }
-
-        getServer().getPluginManager().registerEvents(new helpAliases(), this);
 
         try {
             Class.forName("org.spigotmc.SpigotConfig");
@@ -55,5 +62,30 @@ public class HelpCommand extends JavaPlugin {
 
     public static boolean isPapiInstalled(JavaPlugin plugin) {
         return plugin.getServer().getPluginManager().getPlugin("PlaceholderAPI") != null;
+    }
+
+    private void registerAliases() {
+        CommandMap commandMap = getCommandMap();
+        List<String> aliases = getConfig().getStringList("aliases");
+        for (String alias : aliases) {
+            BukkitCommand command = new BukkitCommand(alias) {
+                @Override
+                public boolean execute(@NotNull CommandSender commandSender, @NotNull String s, @NotNull String[] strings) {
+                    return false;
+                }
+            };
+            commandMap.register(getDescription().getName(), command);
+        }
+    }
+
+    private CommandMap getCommandMap() {
+        try {
+            Field commandMapField = getServer().getClass().getDeclaredField("commandMap");
+            commandMapField.setAccessible(true);
+            return (CommandMap) commandMapField.get(getServer());
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
