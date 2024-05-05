@@ -103,7 +103,7 @@ public class help implements CommandExecutor {
                         }
                     } else {
                         // If no page number specified, send page 1
-                        if ((enabledPages.contains(2)) || (args[0].equals("1"))) {
+                        if (args.length > 0 && (enabledPages.contains(2) || args[0].equals("1"))) {
                             // If page 2 exists
                             ver = (String) config.getStringList("help.1").stream().collect(Collectors.joining("\n"));
                             if (papiInstalled) {
@@ -123,7 +123,11 @@ public class help implements CommandExecutor {
                         } else {
                             // If page 2 doesn't exist
                             ver = (String) config.getStringList("help.1").stream().collect(Collectors.joining("\n"));
-                            ver2 = PlaceholderAPI.setPlaceholders(player, ver);
+                            if (papiInstalled) {
+                                ver2 = PlaceholderAPI.setPlaceholders(player, ver);
+                            } else {
+                                ver2 = ver;
+                            }
                             player.sendMessage(TextUtil.color(ver2));
                         }
                     }
