@@ -17,7 +17,7 @@
 # Main Help Command
 ######################################
 
-version: "2.8.3" # DO NOT CHANGE THIS VALUE
+version: "2.8.4" # DO NOT CHANGE THIS VALUE
 updateCheck: true # recommended to keep this value as true
 
 help:

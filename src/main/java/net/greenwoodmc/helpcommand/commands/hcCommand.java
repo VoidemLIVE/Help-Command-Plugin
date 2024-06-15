@@ -8,10 +8,18 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class hcCommand implements CommandExecutor {
     FileConfiguration config = JavaPlugin.getPlugin(HelpCommand.class).getConfig();
@@ -30,7 +38,7 @@ public class hcCommand implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("hc")) {
             if (args.length >= 1) {
                 arg1 = args[0];
-                if (arg1.equalsIgnoreCase("reload")) {
+                if (arg1.equalsIgnoreCase("reload") || arg1.equalsIgnoreCase("rl")) {
                     ver = config.getString("reload");
                     plug.reloadConfig();
                     try {
@@ -47,12 +55,60 @@ public class hcCommand implements CommandExecutor {
                     }
                 }
 
-                if (arg1.equalsIgnoreCase("version")) {
+                if (arg1.equalsIgnoreCase("version") || arg1.equalsIgnoreCase("ver")) {
                     ver = plug.getDescription().getVersion();
                     if (isPlayer) {
                         sender.sendMessage("HelpCommand Version: " + ver);
+                        try {
+                            URL url = new URL("https://api.spigotmc.org/simple/0.1/index.php?action=getResource&id=102926");
+                            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+                            if (connection.getResponseCode() == 200) {
+                                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                                StringBuilder response = new StringBuilder();
+                                String line;
+
+                                while ((line = reader.readLine()) != null) {
+                                    response.append(line);
+                                }
+
+                                String spigotVersion = extractVersionFromResponse(response.toString());
+
+                                if (!spigotVersion.equals(config.getString("version"))) {
+                                    sender.sendMessage(TextUtil.color("&dA new version of HelpCommand is available! download &eV" + spigotVersion + "&d here: &ahttps://www.spigotmc.org/resources/102926/"));
+                                }
+                            } else {
+                                plug.getLogger().warning("Failed to retrieve plugin information from SpigotMC. HTTP response code: " + connection.getResponseCode());
+                            }
+                        } catch (IOException e) {
+                            plug.getLogger().warning("Error checking Spigot version: " + e.getMessage());
+                        }
                     } else {
                         plug.getLogger().info("HelpCommand Version: " + ver);
+                        try {
+                            URL url = new URL("https://api.spigotmc.org/simple/0.1/index.php?action=getResource&id=102926");
+                            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+                            if (connection.getResponseCode() == 200) {
+                                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                                StringBuilder response = new StringBuilder();
+                                String line;
+
+                                while ((line = reader.readLine()) != null) {
+                                    response.append(line);
+                                }
+
+                                String spigotVersion = extractVersionFromResponse(response.toString());
+
+                                if (!spigotVersion.equals(config.getString("version"))) {
+                                    plug.getLogger().info(TextUtil.color("A new version of HelpCommand is available! download V" + spigotVersion + "here: https://www.spigotmc.org/resources/102926/"));
+                                }
+                            } else {
+                                plug.getLogger().warning("Failed to retrieve plugin information from SpigotMC. HTTP response code: " + connection.getResponseCode());
+                            }
+                        } catch (IOException e) {
+                            plug.getLogger().warning("Error checking Spigot version: " + e.getMessage());
+                        }
                     }
                 }
 
@@ -76,5 +132,23 @@ public class hcCommand implements CommandExecutor {
         }
 
         return false;
+    }
+
+    private String extractVersionFromResponse(String jsonResponse) {
+        Plugin plugin = JavaPlugin.getPlugin(HelpCommand.class);
+
+        try {
+            JSONParser parser = new JSONParser();
+            JSONObject jsonObject = (JSONObject) parser.parse(jsonResponse);
+            Object versionObject = jsonObject.get("current_version");
+            if (versionObject != null) {
+                return versionObject.toString();
+            } else {
+                plugin.getLogger().warning("Failed to extract version from JSON response. 'current_version' field not found.");
+            }
+        } catch (ParseException e) {
+            plugin.getLogger().warning("Error parsing JSON response: " + e.getMessage());
+        }
+        return "";
     }
 }
