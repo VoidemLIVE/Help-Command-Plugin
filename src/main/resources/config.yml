@@ -17,7 +17,7 @@
 # Main Help Command
 ######################################
 
-version: "2.8.4" # DO NOT CHANGE THIS VALUE
+version: "2.9" # DO NOT CHANGE THIS VALUE
 updateCheck: true # recommended to keep this value as true
 
 help:
@@ -104,7 +104,7 @@ pageNA: '&cThis page does not exist!' # sets message for if a page doesn't exist
 
 pagePrompt:
   enabled: true
-  pageNumberColour: 'GREEN'
-  pageTextColour: 'GOLD'
-  page: 'Page'
+  page: '&6Page &e$[pageNum]'
+  arrowBack: '&a[<< &2$[prevNum]&a]'
+  arrowForward: '&a[&2$[nextNum]&a >>]'
 ######################################
