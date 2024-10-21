@@ -76,3 +76,8 @@ if you have any suggestions!
 Or create a pull request.
 
 [![Bstats](https://bstats.org/signatures/bukkit/Help%20Plugin.svg)](https://bstats.org/plugin/bukkit/Help%20Plugin/15592)
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
