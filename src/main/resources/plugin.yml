@@ -5,6 +5,7 @@ api-version: 1.18
 authors: [ VoidemLIVE ]
 description: Simple custom help command
 website: helpcommand.greenwoodmc.net
+folia-supported: true
 
 softdepend: [PlaceholderAPI]
 
