@@ -14,6 +14,7 @@ net\greenwoodmc\helpcommand\commands\hcCommand.class
 net\greenwoodmc\helpcommand\commands\help.class
 net\greenwoodmc\helpcommand\Metrics$MultiLineChart.class
 net\greenwoodmc\helpcommand\Metrics.class
+net\greenwoodmc\helpcommand\listeners\PlayerJoinListener$1$1.class
 net\greenwoodmc\helpcommand\Metrics$AdvancedBarChart.class
 net\greenwoodmc\helpcommand\HelpCommand.class
 net\greenwoodmc\helpcommand\Metrics$AdvancedPie.class
@@ -22,5 +23,6 @@ net\greenwoodmc\helpcommand\tabcomplete\hc.class
 net\greenwoodmc\helpcommand\listeners\helpAliases.class
 net\greenwoodmc\helpcommand\Metrics$1.class
 net\greenwoodmc\helpcommand\Metrics$SingleLineChart.class
+net\greenwoodmc\helpcommand\listeners\PlayerJoinListener$1.class
 net\greenwoodmc\helpcommand\util\colour\patterns\Pattern.class
 net\greenwoodmc\helpcommand\Metrics$DrilldownPie.class

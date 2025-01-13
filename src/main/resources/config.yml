@@ -17,7 +17,7 @@
 # Main Help Command
 ######################################
 
-version: "2.9.1" # DO NOT CHANGE THIS VALUE
+version: "2.9.2" # DO NOT CHANGE THIS VALUE
 updateCheck: true # recommended to keep this value as true
 
 help:
