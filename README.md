@@ -15,7 +15,7 @@
 <p>An easy to use plugin to help your players
   out with a fully customizable '/help' command</p>
 
-<h3>3000+ Downloads!</h3>
+<h3>4000+ Downloads!</h3>
 
 </div>
 
