@@ -183,7 +183,7 @@ public class IridiumColorAPI {
             version = version.substring(0, lastDot);
         }
 
-        return Integer.parseInt(version.substring(2));
+        return Integer.parseInt(version.substring(version.indexOf(46) + 1));
     }
 
     static {
