@@ -6,6 +6,7 @@ import net.greenwoodmc.helpcommand.util.TextUtil;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
+import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -29,8 +30,6 @@ public class help implements CommandExecutor {
         }
 
         Player player = (Player) sender;
-        String ver;
-        String ver2;
         String pageText = config.getString("pagePrompt.page");
         Pattern pattern = Pattern.compile("\\$\\[(.*?)\\]");
         Matcher matcherPageText = pattern.matcher(pageText);
@@ -60,9 +59,22 @@ public class help implements CommandExecutor {
 
                 if (currPageNumber >= 1 && currPageNumber <= lastPage) {
                     if (enabledPages.contains(currPageNumber)) {
-                        ver = config.getStringList("help." + currPageNumber).stream().collect(Collectors.joining("\n"));
-                        ver2 = papiInstalled ? PlaceholderAPI.setPlaceholders(player, ver) : ver;
-                        player.sendMessage(TextUtil.color(ver2));
+                        for (String line : config.getStringList("help." + currPageNumber)) {
+                            if (papiInstalled) {
+                                line = PlaceholderAPI.setPlaceholders(player, line);
+                            }
+                            String processed = TextUtil.color(line);
+                            Matcher m = Pattern.compile("/([\\w-]+(?:\\s+[\\w-]+)*)").matcher(processed);
+                            if (m.find()) {
+                                TextComponent tc = new TextComponent(processed);
+                                tc.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, m.group(0)));
+                                tc.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
+                                    new ComponentBuilder("\u00a7aClick to run \u00a7f" + m.group(0)).create()));
+                                player.spigot().sendMessage(tc);
+                            } else {
+                                player.sendMessage(processed);
+                            }
+                        }
 
                         if (pagePromptEnabled && enabledPages.size() > 1) { // Only show page prompt if more than one page
                             ComponentBuilder pagePromptBuilder = new ComponentBuilder();
